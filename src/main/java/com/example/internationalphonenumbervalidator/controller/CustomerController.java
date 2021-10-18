@@ -22,9 +22,9 @@ public class CustomerController {
 
     @GetMapping(value = "/contact", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<CustomerResponse> getCustomerPhoneNumbers(
-            @RequestParam(value = "offset", defaultValue = "0") int offset,
-            @RequestParam(value = "limit", defaultValue = "20") int limit) {
-        CustomerResponse customerResponse = customerService.getCustomerPhoneNumbers(offset, limit);
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "pageSize", defaultValue = "20") int pageSize) {
+        CustomerResponse customerResponse = customerService.getCustomerPhoneNumbers(page, pageSize);
         return ResponseEntity.ok(customerResponse);
     }
 }

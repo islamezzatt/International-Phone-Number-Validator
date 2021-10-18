@@ -44,11 +44,13 @@ public class CustomerControllerTest {
     }
 
     private CustomerResponse getCustomerResponseDto() {
-        CustomerResponse customerResponse = new CustomerResponse();
-        List<CustomerDto> customerDto = JsonUtil.fromResourcePathUsingListObjectMapper("/sample-response.json",
+        List<CustomerDto> customers = JsonUtil.fromResourcePathUsingListObjectMapper("/sample-response.json",
                 CustomerDto.class);
-        customerResponse.setResultItems(customerDto.size());
-        customerResponse.setTotalItems(10);
+        CustomerResponse customerResponse = CustomerResponse.builder()
+                .customers(customers)
+                .resultItems(customers.size())
+                .totalItems(10)
+                .build();
         return customerResponse;
     }
 }
