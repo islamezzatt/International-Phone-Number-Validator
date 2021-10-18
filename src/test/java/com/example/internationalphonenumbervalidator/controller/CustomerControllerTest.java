@@ -47,8 +47,8 @@ public class CustomerControllerTest {
         CustomerResponse customerResponse = new CustomerResponse();
         List<CustomerDto> customerDto = JsonUtil.fromResourcePathUsingListObjectMapper("/sample-response.json",
                 CustomerDto.class);
-        customerResponse.setResultCount(customerDto.size());
-        customerResponse.setTotalCount(10);
+        customerResponse.setResultItems(customerDto.size());
+        customerResponse.setTotalItems(10);
         return customerResponse;
     }
 }

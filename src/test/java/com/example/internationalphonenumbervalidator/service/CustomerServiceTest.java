@@ -1,29 +1,27 @@
 package com.example.internationalphonenumbervalidator.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-
 import com.example.internationalphonenumbervalidator.entities.Customer;
 import com.example.internationalphonenumbervalidator.mapper.CustomerMapper;
 import com.example.internationalphonenumbervalidator.model.CustomerDto;
 import com.example.internationalphonenumbervalidator.model.CustomerResponse;
 import com.example.internationalphonenumbervalidator.repository.CustomerRepository;
 import com.example.internationalphonenumbervalidator.utils.JsonUtil;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
@@ -43,7 +41,7 @@ public class CustomerServiceTest {
         when(customerRepository.findAll(any(Pageable.class))).thenReturn(getCustomerList());
         when(customerMapper.fromCustomerEntityList(any())).thenReturn(getCustomerResponseDto());
         CustomerResponse customerResponse = customerService.getCustomerPhoneNumbers(0, 5);
-        assertEquals(3, customerResponse.getCustomerResponseDtoList().size());
+        assertEquals(3, customerResponse.getCustomers().size());
     }
 
     private Page<Customer> getCustomerList() {

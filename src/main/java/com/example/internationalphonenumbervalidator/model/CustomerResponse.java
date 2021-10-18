@@ -3,31 +3,49 @@ package com.example.internationalphonenumbervalidator.model;
 import java.util.List;
 
 public class CustomerResponse {
-    private List<CustomerDto> customerDtoList;
-    private long resultCount;
-    private long totalCount;
+    private long resultItems;
+    private long totalItems;
+    private long currentPage;
+    private long totalPages;
+    private List<CustomerDto> customers;
 
-    public List<CustomerDto> getCustomerResponseDtoList() {
-        return customerDtoList;
+    public long getResultItems() {
+        return resultItems;
     }
 
-    public void setCustomerResponseDtoList(List<CustomerDto> customerDtoList) {
-        this.customerDtoList = customerDtoList;
+    public void setResultItems(long resultItems) {
+        this.resultItems = resultItems;
     }
 
-    public long getResultCount() {
-        return resultCount;
+    public long getTotalItems() {
+        return totalItems;
     }
 
-    public void setResultCount(long resultCount) {
-        this.resultCount = resultCount;
+    public void setTotalItems(long totalItems) {
+        this.totalItems = totalItems;
     }
 
-    public long getTotalCount() {
-        return totalCount;
+    public long getCurrentPage() {
+        return currentPage;
     }
 
-    public void setTotalCount(long totalCount) {
-        this.totalCount = totalCount;
+    public void setCurrentPage(long currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public long getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(long totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public List<CustomerDto> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<CustomerDto> customers) {
+        this.customers = customers;
     }
 }

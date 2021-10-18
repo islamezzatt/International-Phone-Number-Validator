@@ -27,13 +27,16 @@ public class CustomerService {
     }
 
     public CustomerResponse getCustomerPhoneNumbers(int offset, int limit) {
-        CustomerResponse customerResponse = new CustomerResponse();
         Pageable pageable = PageRequest.of(offset, limit);
         Page<Customer> customerPagedList = customerRepository.findAll(pageable);
         List<CustomerDto> customerDtoList = customerMapper.fromCustomerEntityList(customerPagedList.toList());
-        customerResponse.setTotalCount(customerPagedList.getTotalElements());
-        customerResponse.setResultCount(customerPagedList.getNumberOfElements());
-        customerResponse.setCustomerResponseDtoList(customerDtoList);
+
+        CustomerResponse customerResponse = new CustomerResponse();
+        customerResponse.setCustomers(customerDtoList);
+        customerResponse.setCurrentPage(customerPagedList.getNumber());
+        customerResponse.setTotalPages(customerPagedList.getTotalPages());
+        customerResponse.setTotalItems(customerPagedList.getTotalElements());
+        customerResponse.setResultItems(customerPagedList.getNumberOfElements());
         return customerResponse;
     }
 }
