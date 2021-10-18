@@ -1,0 +1,4 @@
+com\example\internationalphonenumbervalidator\service\CustomerServiceTest.class
+com\example\internationalphonenumbervalidator\controller\CustomerControllerTest.class
+com\example\internationalphonenumbervalidator\utils\PhoneNumberUtilTest.class
+com\example\internationalphonenumbervalidator\utils\JsonUtil.class

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Walid Hammadi",
+    "country": "Morocco",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "6007989253"
+    }
+  },
+  {
+    "name": "Yosaf Karrouch",
+    "country": "Morocco",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "698054317"
+    }
+  },
+  {
+    "name": "Younes Boutikyad",
+    "country": "Morocco",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "6546545369"
+    }
+  }
+]
