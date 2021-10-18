@@ -1,29 +1,116 @@
-[
-  {
-    "name": "Walid Hammadi",
-    "country": "Morocco",
-    "state": "invalid",
-    "phoneNumber": {
-      "countryCode": "212",
-      "localNumber": "6007989253"
+{
+  "resultItems": 12,
+  "totalItems": 15,
+  "currentPage": 0,
+  "totalPages": 2,
+  "customers": [
+    {
+      "name": "Walid Hammadi",
+      "country": "Morocco",
+      "state": "invalid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "6007989253"
+      }
+    },
+    {
+      "name": "Yosaf Karrouch",
+      "country": "Morocco",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "698054317"
+      }
+    },
+    {
+      "name": "Younes Boutikyad",
+      "country": "Morocco",
+      "state": "invalid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "6546545369"
+      }
+    },
+    {
+      "name": "Houda Houda",
+      "country": "Morocco",
+      "state": "invalid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "6617344445"
+      }
+    },
+    {
+      "name": "Chouf Malo",
+      "country": "Morocco",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "691933626"
+      }
+    },
+    {
+      "name": "soufiane fritisse ",
+      "country": "Morocco",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "633963130"
+      }
+    },
+    {
+      "name": "Nada Sofie",
+      "country": "Morocco",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "212",
+        "localNumber": "654642448"
+      }
+    },
+    {
+      "name": "Edunildo Gomes Alberto ",
+      "country": "Mozambique",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "258",
+        "localNumber": "847651504"
+      }
+    },
+    {
+      "name": "Walla's Singz Junior",
+      "country": "Mozambique",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "258",
+        "localNumber": "846565883"
+      }
+    },
+    {
+      "name": "sevilton sylvestre",
+      "country": "Mozambique",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "258",
+        "localNumber": "849181828"
+      }
+    },
+    {
+      "name": "Tanvi Sachdeva",
+      "country": "Mozambique",
+      "state": "invalid",
+      "phoneNumber": {
+        "countryCode": "258",
+        "localNumber": "84330678235"
+      }
+    },
+    {
+      "name": "Florencio Samuel",
+      "country": "Mozambique",
+      "state": "valid",
+      "phoneNumber": {
+        "countryCode": "258",
+        "localNumber": "847602609"
+      }
     }
-  },
-  {
-    "name": "Yosaf Karrouch",
-    "country": "Morocco",
-    "state": "valid",
-    "phoneNumber": {
-      "countryCode": "212",
-      "localNumber": "698054317"
-    }
-  },
-  {
-    "name": "Younes Boutikyad",
-    "country": "Morocco",
-    "state": "invalid",
-    "phoneNumber": {
-      "countryCode": "212",
-      "localNumber": "6546545369"
-    }
-  }
-]
+  ]
+}

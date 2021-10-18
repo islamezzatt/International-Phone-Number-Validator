@@ -35,7 +35,7 @@ public class CustomerService {
         return customerResponse;
     }
 
-    private List<Customer> paginateCustomerList(List<Customer> customerList, int page, int pageSize) {
+    List<Customer> paginateCustomerList(List<Customer> customerList, int page, int pageSize) {
         List<Customer> customerSubList;
         int offset = page * pageSize;
         int lastIndex = offset + pageSize;
@@ -50,7 +50,7 @@ public class CustomerService {
         return customerSubList;
     }
 
-    private CustomerResponse buildCustomerResponse(int page, int pageSize, int originalTotalSize,
+    CustomerResponse buildCustomerResponse(int page, int pageSize, int originalTotalSize,
             List<CustomerDto> customerDtoList) {
         CustomerResponse customerResponse = CustomerResponse.builder()
                 .customers(customerDtoList)

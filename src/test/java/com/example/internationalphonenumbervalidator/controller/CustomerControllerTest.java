@@ -3,54 +3,47 @@ package com.example.internationalphonenumbervalidator.controller;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.util.List;
+import java.io.IOException;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.example.internationalphonenumbervalidator.model.CustomerDto;
 import com.example.internationalphonenumbervalidator.model.CustomerResponse;
 import com.example.internationalphonenumbervalidator.service.CustomerService;
 import com.example.internationalphonenumbervalidator.utils.JsonUtil;
 
+@ExtendWith(SpringExtension.class)
+@WebMvcTest(CustomerController.class)
 public class CustomerControllerTest {
 
+    @Autowired
     private MockMvc mockMvc;
 
-    @Mock
+    @MockBean
     private CustomerService customerService;
-
-    @InjectMocks
-    private CustomerController customerController;
-
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(customerController).build();
-    }
 
     @Test
     public void test_getCustomerPhoneNumbers_success() throws Exception {
         when(customerService.getCustomerPhoneNumbers(anyInt(), anyInt())).thenReturn(getCustomerResponseDto());
-        mockMvc.perform(get("/customer/contact").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+        mockMvc.perform(get("/customer/contact").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+                .andExpect(jsonPath("$.resultItems", Matchers.is(12)))
+                .andExpect(jsonPath("$.totalItems", Matchers.is(15)))
+                .andExpect(jsonPath("$.currentPage", Matchers.is(0)))
+                .andExpect(jsonPath("$.totalPages", Matchers.is(2)));
     }
 
-    private CustomerResponse getCustomerResponseDto() {
-        List<CustomerDto> customers = JsonUtil.fromResourcePathUsingListObjectMapper("/sample-response.json",
-                CustomerDto.class);
-        CustomerResponse customerResponse = CustomerResponse.builder()
-                .customers(customers)
-                .resultItems(customers.size())
-                .totalItems(10)
-                .build();
+    private CustomerResponse getCustomerResponseDto() throws IOException {
+        CustomerResponse customerResponse = JsonUtil.fromResourcePath("/sample-response.json", CustomerResponse.class);
         return customerResponse;
     }
 }

@@ -9,6 +9,10 @@ public class CustomerResponse {
     private long totalPages;
     private List<CustomerDto> customers;
 
+    private CustomerResponse(){
+
+    }
+
     private CustomerResponse(Builder builder) {
         this.resultItems = builder.resultItems;
         this.totalItems = builder.totalItems;

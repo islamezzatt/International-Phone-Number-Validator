@@ -1,17 +1,18 @@
 package com.example.internationalphonenumbervalidator.utils;
 
-import com.example.internationalphonenumbervalidator.model.PhoneNumber;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.Assert.*;
+import com.example.internationalphonenumbervalidator.model.PhoneNumber;
 
 @SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
 public class PhoneNumberUtilTest {
 
     @Test
@@ -39,15 +40,14 @@ public class PhoneNumberUtilTest {
         assertNull(phoneNumber);
     }
 
-
     @Test
-    public void test_isValidPhoneNumber_valid(){
+    public void test_isValidPhoneNumber_valid() {
         assertTrue(PhoneNumberUtil.isValidPhoneNumber("(237) 695539786"));
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"asdsadadasdsa", "(212) 6546545369"})
-    public void test_isValidPhoneNumber_inValid(String arg){
+    @ValueSource(strings = { "asdsadadasdsa", "(212) 6546545369" })
+    public void test_isValidPhoneNumber_inValid(String arg) {
         assertFalse(PhoneNumberUtil.isValidPhoneNumber(arg));
     }
 }
