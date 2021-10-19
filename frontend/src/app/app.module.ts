@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer/customer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from './http/http.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    HttpModule.forRoot({ environment})
   ],
   providers: [],
   bootstrap: [AppComponent]
