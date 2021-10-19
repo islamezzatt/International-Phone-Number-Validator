@@ -1,7 +1,8 @@
 # International Phone Number Validator
 
-This project consists of backend application which is the spring boot application that loads sqlite 3 database by using spring data and also consisting of frontend application that was developed using anulgar 12 framework.
+-This project consists of backend application which is the spring boot application that loads sqlite 3 database by using spring data and also consisting of frontend application that was developed using anulgar 12 framework.
 
+-The project loads customer numbers into web page where each row has the name of the customer, country, country code, localnumber & also if this number if valid or not due to international phone numbers.
 
 ## How to run project
 
