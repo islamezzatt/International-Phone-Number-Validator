@@ -10,4 +10,8 @@ This project consists of backend application which is the spring boot applicatio
 docker-compose up -d
 ```
 
-Note: the backend dockerfile has two stages; 1- mvn clean package to clean and build the project into jar, 2- to run the jar.
+Note: the backend dockerfile has two stages; 
+- mvn clean package to clean and build the project into jar (which might takes couple of minutes the first run as it downloads the original images)
+- To run the jar.
+
+- Each project has dockerfile that is used to build the image.
