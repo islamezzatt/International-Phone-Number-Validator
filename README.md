@@ -1,1 +1,3 @@
-International Phone Number Validator
+# International Phone Number Validator
+
+## How to run project
