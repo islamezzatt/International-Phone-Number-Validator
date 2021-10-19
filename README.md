@@ -11,7 +11,27 @@ docker-compose up -d
 ```
 
 Note: the backend dockerfile has two stages; 
-- mvn clean package to clean and build the project into jar (which might takes couple of minutes the first run as it downloads the original images)
-- To run the jar.
+1. mvn clean package to clean and build the project into jar (which might takes couple of minutes the first run as it downloads the original images)
+2. To run the jar.
 
 - Each project has dockerfile that is used to build the image.
+
+## How to run each project seperately
+
+- Backend
+```
+docker build -t phonenumbervalidator-backend:1.0 .
+```
+
+```
+docker run -p 8090:8080 -it phonenumbervalidator-backend:1.0
+```
+
+- Frontend
+```
+docker build -t phonenumbervalidator-frontend:1.0 .
+```
+
+```
+docker run -p 4200:80 -it phonenumbervalidator-frontend:1.0
+```
