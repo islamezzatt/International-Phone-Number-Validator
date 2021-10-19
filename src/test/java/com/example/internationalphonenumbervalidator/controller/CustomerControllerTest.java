@@ -1,5 +1,6 @@
 package com.example.internationalphonenumbervalidator.controller;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -34,7 +35,8 @@ public class CustomerControllerTest {
 
     @Test
     public void test_getCustomerPhoneNumbers_success() throws Exception {
-        when(customerService.getCustomerPhoneNumbers(anyInt(), anyInt())).thenReturn(getCustomerResponseDto());
+        when(customerService.getCustomerPhoneNumbers(anyInt(), anyInt(), any(), any()))
+                .thenReturn(getCustomerResponseDto());
         mockMvc.perform(get("/customer/contact").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
                 .andExpect(jsonPath("$.resultItems", Matchers.is(12)))
                 .andExpect(jsonPath("$.totalItems", Matchers.is(15)))

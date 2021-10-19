@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Walid Hammadi",
+    "country": "Morocco",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "6007989253"
+    }
+  },
+  {
+    "name": "Yosaf Karrouch",
+    "country": "Morocco",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "698054317"
+    }
+  },
+  {
+    "name": "Younes Boutikyad",
+    "country": "Morocco",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "6546545369"
+    }
+  },
+  {
+    "name": "Houda Houda",
+    "country": "Morocco",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "6617344445"
+    }
+  },
+  {
+    "name": "Chouf Malo",
+    "country": "Morocco",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "691933626"
+    }
+  },
+  {
+    "name": "soufiane fritisse ",
+    "country": "Morocco",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "633963130"
+    }
+  },
+  {
+    "name": "Nada Sofie",
+    "country": "Morocco",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "212",
+      "localNumber": "654642448"
+    }
+  },
+  {
+    "name": "Edunildo Gomes Alberto ",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "847651504"
+    }
+  },
+  {
+    "name": "Walla's Singz Junior",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "846565883"
+    }
+  },
+  {
+    "name": "sevilton sylvestre",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "849181828"
+    }
+  },
+  {
+    "name": "Tanvi Sachdeva",
+    "country": "Mozambique",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "84330678235"
+    }
+  },
+  {
+    "name": "Florencio Samuel",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "847602609"
+    }
+  },
+  {
+    "name": "Solo Dolo",
+    "country": "Mozambique",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "042423566"
+    }
+  },
+  {
+    "name": "Pedro B 173",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "823747618"
+    }
+  },
+  {
+    "name": "Ezequiel Fenias",
+    "country": "Mozambique",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "258",
+      "localNumber": "848826725"
+    }
+  },
+  {
+    "name": "JACKSON NELLY",
+    "country": "Uganda",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "775069443"
+    }
+  },
+  {
+    "name": "Kiwanuka Budallah",
+    "country": "Uganda",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "7503O6263"
+    }
+  },
+  {
+    "name": "VINEET SETH",
+    "country": "Uganda",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "704244430"
+    }
+  },
+  {
+    "name": "Jokkene Richard",
+    "country": "Uganda",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "7734127498"
+    }
+  },
+  {
+    "name": "Ogwal David",
+    "country": "Uganda",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "7771031454"
+    }
+  },
+  {
+    "name": "pt shop 0901 Ultimo ",
+    "country": "Uganda",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "3142345678"
+    }
+  },
+  {
+    "name": "Daniel Makori",
+    "country": "Uganda",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "256",
+      "localNumber": "714660221"
+    }
+  },
+  {
+    "name": "shop23 sales",
+    "country": "Ethiopia",
+    "state": "invalid",
+    "phoneNumber": {
+      "countryCode": "251",
+      "localNumber": "9773199405"
+    }
+  },
+  {
+    "name": "Filimon Embaye",
+    "country": "Ethiopia",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "251",
+      "localNumber": "914701723"
+    }
+  },
+  {
+    "name": "ABRAHAM NEGASH",
+    "country": "Ethiopia",
+    "state": "valid",
+    "phoneNumber": {
+      "countryCode": "251",
+      "localNumber": "911203317"
+    }
+  }
+]

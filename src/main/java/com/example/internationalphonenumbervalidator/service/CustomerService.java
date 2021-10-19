@@ -2,6 +2,7 @@ package com.example.internationalphonenumbervalidator.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,19 +25,32 @@ public class CustomerService {
         this.customerMapper = customerMapper;
     }
 
-    public CustomerResponse getCustomerPhoneNumbers(int page, int pageSize) {
+    public CustomerResponse getCustomerPhoneNumbers(int page, int pageSize, String country, String state) {
         List<Customer> customerList = customerRepository.findAll();
-        List<Customer> customerSubList = paginateCustomerList(customerList, page, pageSize);
+        List<CustomerDto> customerDtoList = customerMapper.fromCustomerEntityList(customerList);
 
-        List<CustomerDto> customerDtoList = customerMapper.fromCustomerEntityList(customerSubList);
+        customerDtoList = filterResponseIfFilteringExists(country, state, customerDtoList);
+        List<CustomerDto> customerSubList = paginateCustomerList(customerDtoList, page, pageSize);
 
-        int originalTotalSize = customerList.size();
-        CustomerResponse customerResponse = buildCustomerResponse(page, pageSize, originalTotalSize, customerDtoList);
+        int originalTotalSize = customerDtoList.size();
+        CustomerResponse customerResponse = buildCustomerResponse(page, pageSize, originalTotalSize, customerSubList);
         return customerResponse;
     }
 
-    List<Customer> paginateCustomerList(List<Customer> customerList, int page, int pageSize) {
-        List<Customer> customerSubList;
+    List<CustomerDto> filterResponseIfFilteringExists(String country, String state, List<CustomerDto> customerDtoList) {
+        if (country != null && !country.isBlank()) {
+            customerDtoList = customerDtoList.stream().filter(customerDto -> customerDto.getCountry().equals(country))
+                    .collect(Collectors.toList());
+        }
+        if (state != null && !state.isBlank()) {
+            customerDtoList = customerDtoList.stream().filter(customerDto -> customerDto.getState().equals(state))
+                    .collect(Collectors.toList());
+        }
+        return customerDtoList;
+    }
+
+    List<CustomerDto> paginateCustomerList(List<CustomerDto> customerList, int page, int pageSize) {
+        List<CustomerDto> customerSubList;
         int offset = page * pageSize;
         int lastIndex = offset + pageSize;
         if (lastIndex > customerList.size()) {
