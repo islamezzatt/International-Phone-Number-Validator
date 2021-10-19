@@ -19,7 +19,7 @@ export class CustomerComponent implements OnInit {
   page = 1;
   count = 0;
   pageSize = 3;
-  pageSizes = [3,6,9];
+  pageSizes = [3,6,9,12,15];
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
