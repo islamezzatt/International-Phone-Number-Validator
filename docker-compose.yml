@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  validator-backend:
+    build: ./backend
+    container_name: validator-backend   
+    ports:
+     - 8090:8080
+     
+  validator-frontend:
+    build: ./frontend
+    container_name: validator-frontend
+    ports:
+     - 4200:80
+    links:
+     - validator-backend
+         

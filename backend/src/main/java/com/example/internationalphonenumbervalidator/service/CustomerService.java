@@ -39,12 +39,13 @@ public class CustomerService {
 
     List<CustomerDto> filterResponseIfFilteringExists(String country, String state, List<CustomerDto> customerDtoList) {
         if (country != null && !country.isBlank()) {
-            customerDtoList = customerDtoList.stream().filter(customerDto -> customerDto.getCountry().equals(country))
+            customerDtoList = customerDtoList.stream()
+                    .filter(customerDto -> customerDto.getCountry().equalsIgnoreCase(country))
                     .collect(Collectors.toList());
         }
         if (state != null && !state.isBlank()) {
-            customerDtoList = customerDtoList.stream().filter(customerDto -> customerDto.getState().equals(state))
-                    .collect(Collectors.toList());
+            customerDtoList = customerDtoList.stream()
+                    .filter(customerDto -> customerDto.getState().equalsIgnoreCase(state)).collect(Collectors.toList());
         }
         return customerDtoList;
     }
